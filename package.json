@@ -4,10 +4,16 @@
   "description": "vue 前端框架",
   "private": true,
   "scripts": {
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "test": "echo \"Error: no test specified\" && exit 1",
     "build": "webpack --config config/webpack.prod.js",
     "start": "webpack-dev-server --open --config config/webpack.dev.js",
     "dll": "webpack --config ./config/webpack.dll.config.js"
+  },
+  "config": {
+    "commitizen": {
+      "path": "cz-customizable"
+    }
   },
   "keywords": [
     "vue",
@@ -16,6 +22,9 @@
   "author": "jige",
   "license": "ISC",
   "devDependencies": {
+    "@commitlint/cli": "^7.0.0",
+    "@commitlint/config-conventional": "^7.0.1",
+    "husky": "^0.14.3",
     "assets-webpack-plugin": "^3.9.7",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.5",

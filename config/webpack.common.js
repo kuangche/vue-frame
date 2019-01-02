@@ -13,6 +13,11 @@ module.exports = {
         path: path.resolve(__dirname, '../dist'),
         publicPath: '/'
     },
+    resolve: {
+        alias: {
+            'vue$': 'vue/dist/vue.esm.js' // 用 webpack 1 时需用 'vue/dist/vue.common.js'
+        }
+    },
     module: {
         rules: [
             {
@@ -27,10 +32,17 @@ module.exports = {
                 }
             },
             {
-                test: /\.css$/,
+                test: /\.scss/,
                 use: ExtractTextPlugin.extract({
-                    fallback: 'style-loader',
-                    use: 'css-loader'
+                    use:[
+                        {
+                            loader:'css-loader'
+                        },
+                        {
+                            loader:'sass-loader'
+                        }
+                    ],
+                    fallback:'style-loader'
                 })
             },
             {

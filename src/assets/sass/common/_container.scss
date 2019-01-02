@@ -1,0 +1,5 @@
+#container {
+  @include size(100%,100%);
+  color: $black-00;
+  @include gradient(#ccc,#eee,30%,80%);
+}

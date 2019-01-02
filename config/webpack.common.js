@@ -2,8 +2,11 @@ const path = require('path');
 const webpack = require('webpack');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const ExtractTextPlugin = require("extract-text-webpack-plugin");
-const VueLoaderPlugin = require('vue-loader/lib/plugin')
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
+function resolve (dir) {
+    return path.join(__dirname, '..', dir)
+}
 module.exports = {
     entry: {
         app: './src/main.js'
@@ -21,6 +24,16 @@ module.exports = {
     },
     module: {
         rules: [
+            {
+                test: /\.(js|vue)$/,
+                loader: 'eslint-loader',
+                enforce: 'pre',
+                include: [resolve('src'), resolve('test')],
+                options: {
+                    formatter: require('eslint-friendly-formatter'),
+                    emitWarning: true
+                }
+            },
             {
                 test: /\.vue$/,
                 use: 'vue-loader'

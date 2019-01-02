@@ -1,6 +1,6 @@
 <template>
-  <div id="container">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+  <div id='container'>
+    <HelloWorld :msg = 'message'/>
   </div>
 </template>
 
@@ -8,10 +8,20 @@
 import HelloWorld from './components/HelloWorld.vue'
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
+    name: 'App',
+    data() {
+        return {
+            message: 234234
+        }
+    },
+    components: {
+        HelloWorld
+    },
+    mounted(){
+        setInterval(()=> {
+            this.message = parseInt(Math.random() * 100000);
+        }, 1000)
+    }
 }
 </script>
 

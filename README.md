@@ -30,7 +30,7 @@ type: 用于说明commit的类别，中允许使用以下7个标识。
       refactor：重构（即不是新增功能，也不是修改bug的代码变动）
       test：增加测试
       chore：构建过程或辅助工具的变动
-scope: 用于说明commit的影响范围，比如store,reducer,view,根据不同位置来决定。
+scope: 用于说明commit的影响范围，比如store,view,根据不同位置来决定。
 subject: 是commit的简短描述，不超过50个字符。
       1.以动词开头，使用第一人称现在时，比如change，而不是changed或changes
       2.第一个字母小写

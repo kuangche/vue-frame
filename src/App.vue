@@ -9,13 +9,13 @@ import HelloWorld from './components/HelloWorld.vue'
 
 const myData = {
     name: 'kj',
-    age: 23234
+    age: 232344
 }
 export default {
     name: 'App',
     data() {
         return {
-            message: 2334,
+            message: 222334,
             ...myData
         }
     },

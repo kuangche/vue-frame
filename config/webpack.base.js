@@ -18,8 +18,10 @@ module.exports = {
     },
     resolve: {
         alias: {
-            vue$: 'vue/dist/vue.esm.js', // 用 webpack 1 时需用 'vue/dist/vue.common.js'
-            '@': resolve('src')
+            '@': resolve('src'),
+            vue$: 'vue/dist/vue.esm.js',
+            mlString: '@/common/string.prototype.js',
+            mlArray: '@/common/array.prototype.js'
         }
     },
     module: {
@@ -91,10 +93,8 @@ module.exports = {
     },
     plugins: [
         new VueLoaderPlugin(),
-        new webpack.ProvidePlugin({
-            $: 'jquery',
-            jQuery: 'jquery',
-            echarts: 'echarts'
+        new webpack.ProvidePlugin({ // 自动加载模块，而不必到处 import 或 require
+            echarts: 'echarts',
         }),
         new HtmlWebpackPlugin({
             template: './index.html', // 本地模板文件的位置，支持加载器(如handlebars、ejs、undersore、html等)，如比如 handlebars!src/index.hbs；

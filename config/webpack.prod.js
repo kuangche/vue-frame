@@ -4,13 +4,13 @@ const merge = require('webpack-merge');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin')
 const HtmlWebpackIncludeAssetsPlugin = require('html-webpack-include-assets-plugin');
-const bundleConfig = require("../dll/bundle-config.json")
-const common = require('./webpack.common.js');
+const bundleConfig = require('../dll/bundle-config.json')
+const common = require('./webpack.base.js');
 
 module.exports = merge(common, {
-    mode: "production",
+    mode: 'production',
     plugins: [
-        new CleanWebpackPlugin(['dist'],{
+        new CleanWebpackPlugin(['dist'], {
             root: path.resolve(__dirname, '../'),
             verbose: true
         }),
@@ -24,7 +24,7 @@ module.exports = merge(common, {
         }),
         new CopyWebpackPlugin([
             {
-                from: path.resolve(__dirname, '../dll/'+ bundleConfig.vendor.js),
+                from: path.resolve(__dirname, `../dll/${bundleConfig.vendor.js}`),
                 to: path.resolve(__dirname, '../dist'),
             }
         ])

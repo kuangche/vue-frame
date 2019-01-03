@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     <h1>{{ msg }}</h1>
+    <div class="chart"/>
   </div>
 </template>
 
@@ -10,7 +11,7 @@ export default {
     props: {
         msg: {
             type: Number,
-            default: 0,
+            default: 10,
             required: true,
             validator(value) {
                 return value >= 0
@@ -18,7 +19,72 @@ export default {
         }
     },
     mounted(){
-        console.log('mounted')
+        const myChart = echarts.init(document.querySelector('.chart'));
+        const option = {
+            title: {
+                text: '某楼盘销售情况',
+                subtext: '纯属虚构'
+            },
+            tooltip: {
+                trigger: 'axis'
+            },
+            legend: {
+                data: ['意向', '预购', '成交']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    mark: { show: true },
+                    dataView: { show: true, readOnly: false },
+                    magicType: { show: true, type: ['line', 'bar', 'stack', 'tiled'] },
+                    restore: { show: true },
+                    saveAsImage: { show: true }
+                }
+            },
+            calculable: true,
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: false,
+                    data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value'
+                }
+            ],
+            series: [
+                {
+                    name: '成交',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: { normal: { areaStyle: { type: 'default' } } },
+                    data: [10, 12, 21, 54, 260, 830, 710]
+                },
+                {
+                    name: '预购',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: { normal: { areaStyle: { type: 'default' } } },
+                    data: [30, 182, 434, 791, 390, 30, 10]
+                },
+                {
+                    name: '意向',
+                    type: 'line',
+                    smooth: true,
+                    itemStyle: { normal: { areaStyle: { type: 'default' } } },
+                    data: [1320, 1132, 601, 234, 120, 90, 20]
+                }
+            ]
+        };
+        myChart.setOption(option)
     }
 }
 </script>
+<style lang="scss" scoped>
+    .chart{
+        width: 500px;
+        height: 500px;
+    }
+</style>

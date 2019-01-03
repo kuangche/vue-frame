@@ -7,19 +7,24 @@
 <script>
 import HelloWorld from './components/HelloWorld.vue'
 
+const myData = {
+    name: 'kj',
+    age: 23234
+}
 export default {
     name: 'App',
     data() {
         return {
-            message: 234234
+            message: 2334,
+            ...myData
         }
     },
     components: {
         HelloWorld
     },
     mounted(){
-        setInterval(()=> {
-            this.message = parseInt(Math.random() * 100000);
+        setInterval(() => {
+            this.message = parseInt(Math.random() * 100000, 10);
         }, 1000)
     }
 }

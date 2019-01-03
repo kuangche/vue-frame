@@ -4,11 +4,10 @@
   "description": "vue 前端框架",
   "private": true,
   "scripts": {
-    "commitmsg": "commitlint -e $GIT_PARAMS",
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "build": "webpack --config config/webpack.prod.js",
     "start": "webpack-dev-server --open --config config/webpack.dev.js",
-    "dll": "webpack --config ./config/webpack.dll.config.js"
+    "dll": "webpack --config ./config/webpack.dll.config.js",
+    "build": "webpack --config config/webpack.prod.js",
+    "commitmsg": "commitlint -e $GIT_PARAMS"
   },
   "config": {
     "commitizen": {
@@ -63,8 +62,6 @@
   "dependencies": {
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
-    "echarts": "^4.2.0-rc.2",
-    "jquery": "^3.3.1",
     "vue": "^2.5.21"
   }
 }

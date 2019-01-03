@@ -7,15 +7,21 @@
 #### 安装额外依赖
 
 ```bash
-npm install package_name --save
-npm install package_name --dev-save
+npm install package_name -S
+npm install package_name -D
 ```
 
 ## 启动调试环境
 
 ```bash
 npm run start
-npm run server
+```
+
+## 打包代码
+
+```bash
+npm run dll
+npm run build
 ```
 
 ## 提交规范

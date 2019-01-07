@@ -20,8 +20,9 @@ module.exports = {
         alias: {
             '@': resolve('src'),
             vue$: 'vue/dist/vue.esm.js',
-            mlString: '@/common/string.prototype.js',
-            mlArray: '@/common/array.prototype.js'
+            mlString: resolve('src/common/string.prototype.js'),
+            mlArray: resolve('src/common/array.prototype.js'),
+            server: resolve('src/common/server.js')
         }
     },
     module: {
@@ -62,7 +63,7 @@ module.exports = {
                 })
             },
             {
-                test: /\.(png|svg|jpg|gif)$/,
+                test: /\.(png|jpg|gif)$/,
                 use: [
                     {
                         loader: 'url-loader',
@@ -76,7 +77,7 @@ module.exports = {
                 ]
             },
             {
-                test: /\.(woff|woff2|eot|ttf|otf)$/,
+                test: /\.(svg|woff|woff2|eot|ttf|otf)$/,
                 use: [
                     {
                         loader: 'url-loader',

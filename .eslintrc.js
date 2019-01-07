@@ -28,7 +28,8 @@ module.exports = {
     'jsdoc'
   ],
   globals: {
-    domain: true
+    domain: true,
+    echarts: true
   },
   rules: {
     // 句尾分号可以省略

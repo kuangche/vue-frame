@@ -3,18 +3,6 @@
  * 公共工具类
  */
 class Tools {
-    static alt(data) {
-        alert(data)
-    }
-
-    static getHash() {
-        return location.hash;
-    }
-
-    static getPathname() {
-        return location.pathname;
-    }
-
     /**
     * 计算字符串长度(英文占1个字符，中文汉字占2个字符)
     * @str 任意字符串

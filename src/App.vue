@@ -9,6 +9,7 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex'
+import server from 'server'
 import HelloWorld from './components/HelloWorld.vue'
 
 const { mapState, mapActions } = createNamespacedHelpers('user/');
@@ -34,7 +35,20 @@ export default {
     mounted(){
         setInterval(() => {
             this.message = parseInt(Math.random() * 100000, 10);
-        }, 1000)
+        }, 1000);
+
+        server({
+            url: '/manage/delUser',
+            method: 'post',
+            data: {
+                id: 21
+            }
+        }).then((response) => {
+            this.$message({
+                message: response.message,
+                type: 'success'
+            })
+        })
     }
 }
 </script>

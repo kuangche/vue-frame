@@ -10,12 +10,13 @@ const state = {
     },
     rememberMe: false
 }
+
 const mutations = {
-    [SIGNIN_USER](state, user) {
-        state.user = user;
+    [SIGNIN_USER](oldState, payload) {
+        state.user = payload;
     },
-    [REMEMBER_USER](state, rememberMe) {
-        state.rememberMe = rememberMe;
+    [REMEMBER_USER](oldState, payload) {
+        state.rememberMe = payload;
     }
 }
 /*
@@ -25,10 +26,9 @@ const mutations = {
  * */
 const actions = {
     signIn: ({ commit }) => {
-        debugger;
         commit(SIGNIN_USER, {
             id: '234234',
-            name: parseInt(Math.random()*10000, 10)
+            name: parseInt(Math.random() * 10000, 10)
         });
     },
     rememberChange({ commit }, rememberMe) {

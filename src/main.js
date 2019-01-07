@@ -1,13 +1,18 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import App from './App.vue'
+import ElmentUI from 'element-ui'
 import 'mlString'
 import store from './store/store'
+import App from './App.vue'
 
-console.log('#000000'.colorToRgba(0.5))
+if (process.env.NODE_ENV === 'development') {
+    require('@/common/mockData')
+}
 
+Vue.use(ElmentUI);
 Vue.use(Vuex);
-new Vue({
+
+window.projectApp = new Vue({
     store,
     components: {
         App

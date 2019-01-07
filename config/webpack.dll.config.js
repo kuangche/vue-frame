@@ -5,7 +5,7 @@ const AssetsPlugin = require('assets-webpack-plugin')
 
 module.exports = {
     entry: {
-        vendor: ['vue/dist/vue.esm.js', 'vuex']
+        vendor: ['vue/dist/vue.esm.js', 'vuex', 'element-ui']
     },
     output: {
         path: path.join(__dirname, '../dll'), // 生成的文件存放路径

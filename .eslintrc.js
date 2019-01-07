@@ -29,7 +29,8 @@ module.exports = {
   ],
   globals: {
     domain: true,
-    echarts: true
+    echarts: true,
+    ElmentUI: true
   },
   rules: {
     // 句尾分号可以省略

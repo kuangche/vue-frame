@@ -1,6 +1,5 @@
 import Vue from 'vue'
 import Vuex from 'vuex'
-import ElmentUI from 'element-ui'
 import 'mlString'
 import store from './store/store'
 import App from './App.vue'

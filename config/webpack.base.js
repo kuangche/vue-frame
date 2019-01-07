@@ -96,6 +96,7 @@ module.exports = {
         new VueLoaderPlugin(),
         new webpack.ProvidePlugin({ // 自动加载模块，而不必到处 import 或 require
             echarts: 'echarts',
+            ElmentUI: 'element-ui'
         }),
         new HtmlWebpackPlugin({
             template: './index.html', // 本地模板文件的位置，支持加载器(如handlebars、ejs、undersore、html等)，如比如 handlebars!src/index.hbs；

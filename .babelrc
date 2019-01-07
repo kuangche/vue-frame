@@ -11,6 +11,7 @@
   ],
   "plugins": [
     "transform-runtime",
+    "dynamic-import-webpack",
     "transform-object-rest-spread"
   ]
 }

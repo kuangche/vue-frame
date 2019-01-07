@@ -2,7 +2,21 @@
  * Created by jige on 2016/12/8.
  * 公共工具类
  */
-class Tools {
+
+/**
+ * 注册一个全局自定义指令 v-focus
+ */
+import Vue from 'vue';
+
+Vue.directive('focus', {
+    // 当绑定元素插入到 DOM 中。
+    inserted: function (el) {
+        // 聚焦元素
+        el.focus()
+    }
+})
+
+export class Tools {
     /**
     * 计算字符串长度(英文占1个字符，中文汉字占2个字符)
     * @str 任意字符串
@@ -221,5 +235,3 @@ class Tools {
         return obj;
     }
 }
-
-export default Tools;

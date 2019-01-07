@@ -8,7 +8,7 @@
   text-overflow: ellipsis;
   white-space: nowrap;
 }
-/*@include gradient(#ccc,#eee,30%,80%);*/
+
 @mixin gradient($color1,$color2,$opacity1:0%,$opacity2:100%) {
   background: -moz-linear-gradient(top, $color1 $opacity1, $color2 $opacity2);
   background: -webkit-gradient(linear, left top, left bottom, color-stop($opacity1, $color1), color-stop($opacity2, $color2));

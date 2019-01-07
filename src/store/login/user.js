@@ -1,22 +1,23 @@
 /**
  * Created by jige on 2016/11/23.
  */
+import { Tools } from '@/common/utils';
+import server from '@/common/server'
 import { SIGNIN_USER, REMEMBER_USER } from '../mutation-types';
 
 const state = {
     user: {
-        id: 'defaultId',
-        name: 'defaultName'
+        id: Tools.getCookie('userId'),
+        name: Tools.getCookie('userName')
     },
-    rememberMe: false
+    rememberMe: !(Tools.isEmpty(Tools.getCookie('rememberMe')) || Tools.getCookie('rememberMe') === 'false')
 }
-
 const mutations = {
-    [SIGNIN_USER](oldState, payload) {
-        state.user = payload;
+    [SIGNIN_USER](oldState, user) {
+        state.user = user;
     },
-    [REMEMBER_USER](oldState, payload) {
-        state.rememberMe = payload;
+    [REMEMBER_USER](oldState, rememberMe) {
+        state.rememberMe = rememberMe;
     }
 }
 /*
@@ -25,18 +26,31 @@ const mutations = {
  *  使用时 需要从cookie里面获取
  * */
 const actions = {
-    signIn: ({ commit }) => {
-        commit(SIGNIN_USER, {
-            id: '234234',
-            name: parseInt(Math.random() * 10000, 10)
-        });
-    },
+    signIn: ({ commit }, data) => new Promise((resolve) => {
+        server({
+            url: '/user/login',
+            method: 'post',
+            data: {
+                username: data.username,
+                password: data.password,
+                rememberMe: data.rememberMe
+            }
+        }).then((response) => {
+            const userId = Tools.getCookie('userId');
+            const userName = Tools.getCookie('userName');
+            commit(SIGNIN_USER, {
+                id: userId,
+                name: userName
+            });
+            resolve(response)
+        })
+    }),
     rememberChange({ commit }, rememberMe) {
         commit(REMEMBER_USER, rememberMe);
+        Tools.setCookie('rememberMe', rememberMe)
     }
 }
 export default {
-    namespaced: true,
     state,
     mutations,
     actions

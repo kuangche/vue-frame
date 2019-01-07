@@ -33,6 +33,8 @@ module.exports = {
     ElmentUI: true
   },
   rules: {
+    // vue-template 使用4个空格
+    'vue/html-indent': ['error', 4],
     // 句尾分号可以省略
     'semi': 'off',
     // 代码中console/debugger处理

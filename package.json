@@ -27,6 +27,7 @@
     "babel-core": "^6.26.3",
     "babel-eslint": "^10.0.1",
     "babel-loader": "^7.1.5",
+    "babel-plugin-dynamic-import-webpack": "^1.1.0",
     "babel-plugin-transform-object-rest-spread": "^6.26.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-env": "^1.7.0",
@@ -64,10 +65,12 @@
     "axios": "^0.18.0",
     "babel-polyfill": "^6.26.0",
     "babel-runtime": "^6.26.0",
+    "bootstrap-sass": "^3.4.0",
     "echarts": "^4.2.0-rc.2",
     "element-ui": "^2.4.11",
     "mockjs": "^1.0.1-beta3",
     "vue": "^2.5.21",
+    "vue-router": "^3.0.2",
     "vuex": "^3.0.1"
   }
 }

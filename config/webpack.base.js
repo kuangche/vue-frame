@@ -21,8 +21,7 @@ module.exports = {
             '@': resolve('src'),
             vue$: 'vue/dist/vue.esm.js',
             mlString: resolve('src/common/string.prototype.js'),
-            mlArray: resolve('src/common/array.prototype.js'),
-            server: resolve('src/common/server.js')
+            mlArray: resolve('src/common/array.prototype.js')
         }
     },
     module: {

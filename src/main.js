@@ -10,7 +10,7 @@ import { Tools } from '@/common/utils';
 
 // 开发环境下加载mock数据
 if (process.env.NODE_ENV === 'development') {
-    require('@/common/mockData')
+    import('@/common/mockData')
 }
 
 Vue.use(ElmentUI);

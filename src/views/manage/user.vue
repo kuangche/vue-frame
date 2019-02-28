@@ -1,37 +1,37 @@
 <template>
     <frame-component>
-        <div 
-            id="main" 
+        <div
+            id="main"
             class="userManage">
             <div class="contentBox">
                 <div class="location"><span>用户管理</span><span class="split">></span><span>用户信息</span></div>
 
                 <div class="dataTable">
                     <el-table :data="userList">
-                        <el-table-column 
-                            prop="userName" 
+                        <el-table-column
+                            prop="userName"
                             label="用户名"/>
-                        <el-table-column 
-                            prop="company" 
+                        <el-table-column
+                            prop="company"
                             label="所属单位"/>
-                        <el-table-column 
-                            prop="email" 
+                        <el-table-column
+                            prop="email"
                             label="邮箱"/>
-                        <el-table-column 
-                            prop="phone" 
+                        <el-table-column
+                            prop="phone"
                             label="联系方式"/>
-                        <el-table-column 
-                            prop="roleName" 
+                        <el-table-column
+                            prop="roleName"
                             label="管理角色"/>
-                        <el-table-column 
-                            inline-template 
-                            :context="_self" 
-                            label="操作" 
+                        <el-table-column
+                            inline-template
+                            :context="_self"
+                            label="操作"
                             width="300">
                             <span class="operateCon">
-                                <el-button 
-                                    type="text" 
-                                    size="small" 
+                                <el-button
+                                    type="text"
+                                    size="small"
                                     @click="deleteUserHandle($index, row)">删除</el-button>
                             </span>
                         </el-table-column>
@@ -55,14 +55,10 @@
 
 <script>
 import { createNamespacedHelpers } from 'vuex';
-import FrameComponent from '@/components/frame.vue';
 
 const { mapState, mapActions } = createNamespacedHelpers('manageUser/');
 
 export default {
-    components: {
-        FrameComponent
-    },
     data() {
         return {
             pageSearchTxt: ''

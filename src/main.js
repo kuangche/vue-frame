@@ -6,6 +6,7 @@ import 'mlArray'
 import store from '@/store/store'
 import routes from '@/routes'
 import App from '@/App.vue'
+import FrameComponent from '@/components/frame'
 import { Tools } from '@/common/utils';
 
 // 开发环境下加载mock数据
@@ -13,6 +14,7 @@ if (process.env.NODE_ENV === 'development') {
     import('@/common/mockData')
 }
 
+Vue.use(FrameComponent);
 Vue.use(ElmentUI);
 Vue.use(Vuex);
 Vue.use(VueRouter);

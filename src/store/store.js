@@ -6,6 +6,7 @@ import manageUser from './manage/user/user';
 
 Vue.use(Vuex);
 export default new Vuex.Store({
+    strict: true,
     modules: {
         user: loginUser,
         manageUser

@@ -1,18 +1,14 @@
 <template>
     <frame-component>
-        <div 
-            id="main" 
+        <div
+            id="main"
             class="userManage"/>
     </frame-component>
 </template>
 
 <script>
-import FrameComponent from '@/components/frame.vue';
 
 export default {
-    components: {
-        FrameComponent
-    },
     methods: {
         chartInit() {
             const chartBox = document.querySelector('#main');

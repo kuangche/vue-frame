@@ -24,16 +24,18 @@
                             prop="roleName"
                             label="管理角色"/>
                         <el-table-column
-                            inline-template
-                            :context="_self"
                             label="操作"
                             width="300">
-                            <span class="operateCon">
-                                <el-button
-                                    type="text"
-                                    size="small"
-                                    @click="deleteUserHandle($index, row)">删除</el-button>
-                            </span>
+                            <template slot-scope="scope">
+                                <span class="operateCon">
+                                    <el-button
+                                        type="text"
+                                        size="small"
+                                        @click="deleteUserHandle($index, row)">
+                                        删除
+                                    </el-button>
+                                </span>
+                            </template>
                         </el-table-column>
                     </el-table>
                 </div>

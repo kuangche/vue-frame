@@ -3,7 +3,7 @@
  */
 
 import server from '@/common/server'
-import { SET_PAGE_NO_USER_MANAGE, SET_PAGE_SIZE_USER_MANAGE, SET_PAGE_TOTAL_USER_MANAGE, SET_USER_LIST_USER_MANAGE } from '../../mutation-types'
+import { SET_PAGE_NO_USER_MANAGE, SET_PAGE_SIZE_USER_MANAGE, SET_PAGE_TOTAL_USER_MANAGE, SET_USER_LIST_USER_MANAGE } from '../mutation-types'
 
 const state = {
     pageNo: 1,

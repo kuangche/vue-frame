@@ -3,8 +3,8 @@
  */
 // 按模块打包
 const login = () => import('./views/login/login.vue');
-const manageUser = () => import('./views/manage/user.vue');
-const manageRole = () => import('./views/manage/role.vue');
+const manageUser = () => import('./views/manage/manageUser.vue');
+const manageRole = () => import('./views/manage/manageRole.vue');
 
 // 定义路由，为每个路由映射一个组件
 export default[
